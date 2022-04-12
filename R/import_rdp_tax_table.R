@@ -57,7 +57,7 @@ import_rdp_tax_table <- function(in_file, confidence=0.5) {
   }
 
   # Take care of confidences less than cutoff in other columns
-  for ( i in 1:nrow(taxa_matrix)) {
+  for (i in 1:nrow(taxa_matrix)) {
     for (j in 2: 6) {
       if(substring(taxa_matrix[i, j-1], 1, 4) == "uncl") {
         taxa_matrix[i, j] <- taxa_matrix[i, j-1]
