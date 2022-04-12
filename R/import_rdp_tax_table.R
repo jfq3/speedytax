@@ -1,5 +1,5 @@
 #' Import RDP Classifier Taxonomy
-#'
+#' @aliases import_rdp_tax_table
 #' @param in_file A fix-rank tab-delimited text file output by the RDP Classifier
 #' @param confidence The confidence level for filtering the taxonomy
 #' @usage import_rdp_tax_table(in_file, confidence)
@@ -8,13 +8,13 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' import_rdp_tax_table(in_file = "rdp_classifier_result.tsv", confidence = 0.8)
+#' }
 #'
 import_rdp_tax_table <- function(in_file, confidence=0.5) {
   #Begin with fixed rank output from command line version of classifier.
-
-  # in_file="classified_renamed.txt"
-  # confidence=0.5
-  class_table <- read.table(in_file, sep="\t", fill=TRUE, stringsAsFactors=FALSE)
+  class_table <- utils::read.table(in_file, sep="\t", fill=TRUE, stringsAsFactors=FALSE)
   class_table <- class_table[order(class_table[, 1]), ]
 
   rank.pos <- seq(from = 4, to = ncol(class_table), by = 3)
@@ -71,7 +71,7 @@ import_rdp_tax_table <- function(in_file, confidence=0.5) {
 
   colnames(taxa_matrix) <- ranks
 
-  class_table <- tax_table(as.matrix(taxa_matrix), errorIfNULL=TRUE)
+  class_table <- phyloseq::tax_table(as.matrix(taxa_matrix), errorIfNULL=TRUE)
   return(class_table)
 }
 
