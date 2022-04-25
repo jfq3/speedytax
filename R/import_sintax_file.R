@@ -64,7 +64,7 @@ import_sintax_file <- function (in_file, confidence = 0.8) {
     }
   }
 
-  # Replace IDs where domain is unidentfied.
+  # Replace IDs where domain is unidentified.
   for (i in  1:nrow(class.table)) {
     if (class.table[i, 2] < confidence) {
       class.table[i, 2] <- 1
@@ -92,6 +92,6 @@ import_sintax_file <- function (in_file, confidence = 0.8) {
   colnames(class.table) <- taxa
   # Convert to phyloseq tax_table
   class.table <- as.matrix(class.table)
-  class.table <- tax_table(class.table, errorIfNULL = TRUE)
+  class.table <- phyloseq::tax_table(class.table, errorIfNULL = TRUE)
   return(class.table)
 }

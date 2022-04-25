@@ -1,4 +1,4 @@
-#' Import RDP Classifier Taxonomy
+#' Import RDP Classifier Taxonomy Table
 #' @aliases import_rdp_tax_table
 #' @param in_file A fix-rank tab-delimited text file output by the RDP Classifier
 #' @param confidence The confidence level for filtering the taxonomy
