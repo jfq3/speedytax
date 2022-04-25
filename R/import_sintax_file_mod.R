@@ -1,15 +1,15 @@
-#' Import SINTAX Classifier Taxonomy
-#' @aliases import_sintax_file
+#' Import SINTAX Classifier Taxonomy Modified
+#' @aliases import_sintax_file_mod
 #' @param in_file A fix-rank tab-delimited text file output by SINTAX
 #' @param confidence The confidence level for filtering the taxonomy
-#' @usage import_sintax_file(in_file, confidence)
+#' @usage import_sintax_file_mod(in_file, confidence)
 #' @details A confidence value of 0.5 is recommended for shorter amplicons and a value of 0.8 for full-length 16S rRNA gene sequences.
 #' @return A phyloseq tax_table object
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' import_rdp_tax_table(in_file = "rdp_classifier_result.tsv", confidence = 0.8)
+#' import_sintax_file_mod(in_file = "sintax_file.txt", confidence = 0.8)
 #' }
 #'
 
