@@ -15,29 +15,31 @@
 
 import_sintax_file_sorted <- function(in_file, confidence) {
 
-# Sort SINTAX file rows into columns
-
 # For testing purposes:
-# library(tidyverse)
-# temp <- read.table(file = "../sintax_tax_table.txt", sep = "\t", fill = TRUE, stringsAsFactors = FALSE)
-# confidence <- 0.5
+library(tidyverse)
+temp <- as.matrix(read.table(file = "../sintax_tax_table.txt", sep = "\t",
+                             fill = TRUE, stringsAsFactors = FALSE))
+confidence <- 0.5
 
-temp <- read.table(file = in_file, sep = "\t", fill = TRUE, stringsAsFactors = FALSE)
+# temp <- as.matrix(read.table(file = in_file, sep = "\t", fill = TRUE, stringsAsFactors = FALSE))
 
 # Create unsorted data, IDs with confidence in parenthesis, ragged.
 unsorted_data <- temp %>%
-  #as_tibble() %>%
-  select(V2) %>%
-  separate(col=V2, sep = ",", into = c("domain", "phylum", "class", "order", "family", "genus"), fill = "right" )
-rownames(unsorted_data) <- temp$V1
-
+  as_tibble() %>%
+  dplyr::select(V1, V2) %>%
+  tidyr::separate(col=V2, sep = ",", into = c("domain", "phylum", "class", "order", "family", "genus"),
+                  fill = "right" )
+unsorted_data <- as.matrix(unsorted_data)
+rownames(unsorted_data) <- unsorted_data[, 1]
+unsorted_data <- unsorted_data[, -1]
+# rownames(unsorted_data) <- temp$V1
+# head(unsorted_data)
 # Create sorted_data, made non-ragged by sorting into ranks.
 # Some empty intermediate ranks, confidences still in parentheses.
 sorted_data <- matrix(data="", ncol = ncol(unsorted_data), nrow = nrow(unsorted_data))
-sorted_data <- as.data.frame(sorted_data)
+# sorted_data <- as.data.frame(sorted_data)
 colnames(sorted_data) <- c("d", "p", "c", "o", "f", "g")
 rownames(sorted_data) <- rownames(unsorted_data)
-head(sorted_data)
 
 for (i in 1:nrow(unsorted_data)) {
   for (j in 1:ncol(unsorted_data)) {
@@ -61,7 +63,7 @@ for (i in 1:nrow(taxa_matrix)) {
   }
 }
 
-taxa_matrix <- as.matrix(taxa_matrix)
+# taxa_matrix <- as.matrix(taxa_matrix)
 
 # Make corresponding numeric confidence matrix.
 confidence_matrix <- sorted_data
@@ -85,7 +87,7 @@ ranks_pre <- c("d_", "p_", "c_", "o_", "f_", "g_", "s_")
 # ranks_pre
 # ranks_pre[2]
 
-# Copied form import sintax file mod:
+# Copied from import sintax file mod:
 # Replace IDs where confidence is less than specified confidence:
 for (i in 1:nrow(taxa_matrix)) {
   for (j in 2:ncol(taxa_matrix)) {

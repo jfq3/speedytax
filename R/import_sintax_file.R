@@ -19,34 +19,35 @@ import_sintax_file <- function (in_file, confidence = 0.8) {
   # For testing purposes:
   # temp <- read.table(file = "../sintax_tax_table.txt", sep = "\t", fill = TRUE, stringsAsFactors = FALSE)
   # temp <- read.table(file = "loop_sample.txt", sep = "\t", fill = TRUE, stringsAsFactors = FALSE)
+  # confidence <- 0.8
+
+  n_ranks <- RDPutils::count_char_occurrences(":", temp[1,2])
+  class_table <- temp |>
+    as_tibble() |>
+    select(V1, V2) |>
+    rename(OTU = V1, taxa = V2) |>
+    mutate(taxa = gsub(')', '', taxa),
+           taxa = gsub(':', '_', taxa),
+           taxa = gsub('\\(', ',', taxa)) |>
+    separate(col = taxa, sep = ",", into = letters[1:(2*n_ranks)])
 
   # Extract otu names.
   otus <- temp[ , 1]
-  # Extract taxonomy with confidences.
-  taxa <- temp[ , 2]
-  # Modify taxonomy field.
-  # Delete closing parenthesis
-  taxa <- gsub(')', '', taxa)
-  # Substitute commma for opening parenthesis.
-  taxa <- gsub('\\(', ',', taxa)
-  # Subsitute underscore for colon
-  taxa <- gsub(':', '_', taxa)
 
   # Create a vector designating confidence columns.
-  conf.col.no <- seq(from=2, to=ncol(class.table), by=2)
+  conf.col.no <- seq(from=3, to=ncol(class_table), by=2)
 
   # Extract the confidence columns to a matrix of numbers
-  confidence_matrix <- class.table[, conf.col.no]
+  confidence_matrix <- class_table[, conf.col.no]
   confidence_matrix <- apply(confidence_matrix, 2, as.numeric)
   #There may be NA's in some columns, so replace them first with confidence < specified confidence:
   confidence_matrix[is.na(confidence_matrix)] <- confidence/2
 
   # Create a vector designating taxa columns.
-  taxa.col.no <- seq(from=1, to=ncol(class.table)-1, by=2)
+  taxa.col.no <- seq(from=2, to=ncol(class_table)-1, by=2)
 
   # Extract these columns to taxa_table
-  taxa_matrix <- class.table[, taxa.col.no]
-
+  taxa_matrix <- class_table[, taxa.col.no]
 
   # Take care of confidences less than cutoff in first column
   for (i in 1:nrow(taxa_matrix)) {
@@ -71,6 +72,7 @@ import_sintax_file <- function (in_file, confidence = 0.8) {
 
   ranks <- c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species")
   colnames(taxa_matrix) <- ranks[1:ncol(taxa_matrix)]
+  taxa_matrix <- as.matrix(taxa_matrix)
   rownames(taxa_matrix) <- otus
 
   class_table <- phyloseq::tax_table(as.matrix(taxa_matrix), errorIfNULL=TRUE)

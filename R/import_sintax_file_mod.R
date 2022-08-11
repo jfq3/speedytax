@@ -16,6 +16,7 @@
 import_sintax_file_mod <- function (in_file = "sintax_file.txt", confidence = 0.8) {
   # Read in sintax file.
   temp <- read.table(file = in_file, sep = "\t", fill = TRUE, stringsAsFactors = FALSE)
+  temp <- read.table(file = "../sintax_tax_table.txt", sep = "\t", fill = TRUE, stringsAsFactors = FALSE)
   # Extract otu names.
   otus <- temp[ , 1]
   # Extract taxonomy with confidences.
@@ -60,7 +61,7 @@ import_sintax_file_mod <- function (in_file = "sintax_file.txt", confidence = 0.
   # Create a vector designating confidence columns.
   conf.col.no <- seq(from=2, to=ncol(class.table), by=2)
   # class.table[conf.col.no] <- lapply(class.table[conf.col.no], as.character)
-  class.table[conf.col.no] <- lapply(class.table[conf.col.no], as.numeric)
+  # class.table[conf.col.no] <- lapply(class.table[conf.col.no], as.numeric)
 
   # Extract the confidence columns to confidence_matrix
   confidence_matrix <- class.table[, conf.col.no]
@@ -70,15 +71,16 @@ import_sintax_file_mod <- function (in_file = "sintax_file.txt", confidence = 0.
   #There may be NA's in some columns, so replace them first.
   # with confidence < specified confidence:
 
-  for (i in 1:nrow(confidence_matrix)) {
-    for (j in 1:ncol(confidence_matrix)) {
-      if (is.na(confidence_matrix[i, j])) {
-        confidence_matrix[i, j] <- confidence/2
-      }
-    }
-  }
+  # for (i in 1:nrow(confidence_matrix)) {
+  #   for (j in 1:ncol(confidence_matrix)) {
+  #     if (is.na(confidence_matrix[i, j])) {
+  #       confidence_matrix[i, j] <- confidence/2
+  #     }
+  #   }
+  # }
 
-  # confidence_matrix[is.na(confidence_matrix)] <- confidence/2
+  confidence_matrix[is.na(confidence_matrix)] <- confidence/2
+  confidence_matrix <- apply(confidence_matrix, 2, as.numeric)
   # End preparation of confidence matrix
 
   ##################################
