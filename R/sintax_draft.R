@@ -72,13 +72,15 @@ rownames(confidence_matrix) <- otus
 
 #There may be NA's in some columns, so replace them first.
 # with confidence < specified confidence:
-for (i in 1:nrow(confidence_matrix)) {
-  for (j in 1:ncol(confidence_matrix)) {
-    if (is.na(confidence_matrix[i, j])) {
-      confidence_matrix[i, j] <- confidence/2
-    }
-  }
-}
+# for (i in 1:nrow(confidence_matrix)) {
+#   for (j in 1:ncol(confidence_matrix)) {
+#     if (is.na(confidence_matrix[i, j])) {
+#       confidence_matrix[i, j] <- confidence/2
+#     }
+#   }
+# }
+confidence_matrix[is.na(confidence_matrix)]  <-  confidence/2
+
 
 # Take care of confidences less than cutoff in first column
 for (i in 1:nrow(taxa_matrix)) {
@@ -109,6 +111,8 @@ for (i in 1:nrow(taxa_matrix)) {
     }
   }
 }
+
+head(taxa_matrix)
 
 # Take care of confidences less than cutoff in other columns
 for (i in 1:nrow(taxa_matrix)) {
