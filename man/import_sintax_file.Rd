@@ -9,7 +9,7 @@ import_sintax_file(in_file, confidence)
 \arguments{
 \item{in_file}{A fix-rank tab-delimited text file output by SINTAX}
 
-\item{confidence}{The confidence level for filtering the taxonomy}
+\item{confidence}{The confidence level for filtering the taxonomy (0.8 by default)}
 }
 \value{
 A phyloseq tax_table object

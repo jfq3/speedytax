@@ -25,7 +25,7 @@ confidence <- 0.5
 
 # Create unsorted data, IDs with confidence in parenthesis, ragged.
 unsorted_data <- temp %>%
-  as_tibble() %>%
+  tibble::as_tibble() %>%
   dplyr::select(V1, V2) %>%
   tidyr::separate(col=V2, sep = ",", into = c("domain", "phylum", "class", "order", "family", "genus"),
                   fill = "right" )
