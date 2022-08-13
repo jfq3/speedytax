@@ -2,9 +2,7 @@
 
 export(import_qiime2_taxonomy)
 export(import_rdp_tax_table)
-export(import_rescript_taxonomy)
 export(import_sintax_file)
-export(import_sintax_file_sorted)
 export(simple_cap)
 importFrom(dplyr,mutate)
 importFrom(dplyr,pull)
