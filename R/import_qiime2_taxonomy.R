@@ -6,7 +6,11 @@
 #' @return A phyloseq tax_table object
 #' @details This function expects 7 ranks: Domain, Phylum, Class, Order, Family, Genus and Species.
 #' @export
-#'
+#' @importFrom dplyr select mutate pull
+#' @importFrom tibble as_tibble
+#' @importFrom tidyr separate
+#' @importFrom stringr str_starts
+#' @importFrom phyloseq tax_table
 #' @examples
 #' \dontrun{
 #' import_qiime2_taxonomy(in_file = "qiime2_classifier_result.tsv")
@@ -15,30 +19,30 @@
 import_qiime2_taxonomy <- function(in_file) {
   temp <- utils::read.table(file = in_file, header = TRUE,
                      stringsAsFactors = FALSE, sep = "\t")
+  # Determine the number of ranks
+  n_ranks <- temp |>
+    dplyr::select(Taxon) |>
+    dplyr::mutate(n_ranks = stringr::str_count(Taxon, ";")) |>
+    dplyr::pull(n_ranks) |> max()
 
-  unsorted_data <-  temp %>%
-    tibble::as_tibble() %>%
-    dplyr::select(-Confidence) %>%
-    dplyr::mutate(Taxon = str_replace_all(Taxon, "__", "_")) %>%
-    tidyr::separate(col = Taxon, sep = "; ", into = c("Domain",
-                                                      "Phylum",
-                                                      "Class",
-                                                      "Order",
-                                                      "Family",
-                                                      "Genus",
-                                                      "Species"),
-                    fill = "right") %>%
+  ranks <- c("d", "p", "c", "o", "f", "g", "s")
+
+  unsorted_data <-  temp |>
+    tibble::as_tibble() |>
+    dplyr::select(-Confidence) |>
+    dplyr::mutate(Taxon = str_replace_all(Taxon, "__", "_")) |>
+    tidyr::separate(col = Taxon, sep = "; ", into = ranks[1:n_ranks],
+                    fill = "right") |>
     as.matrix()
 
   rownames(unsorted_data) <- unsorted_data[, 1]
   unsorted_data <- unsorted_data[, -1]
 
-  ranks <- c("d", "p", "c", "o", "f", "g", "s")
-
   # Sort
   sorted_data <- matrix(data="", ncol = ncol(unsorted_data), nrow = nrow(unsorted_data))
   colnames(sorted_data) <- ranks
   rownames(sorted_data) <- rownames(unsorted_data)
+
   for (i in 1:nrow(unsorted_data)) {
     for (j in 1:ncol(unsorted_data)) {
       rank <- ranks[j]
@@ -56,16 +60,21 @@ import_qiime2_taxonomy <- function(in_file) {
   # Fill in other cases of empty data
   for (i in 1:nrow(sorted_data)) {
     for (j in 2:ncol(sorted_data)) {
-      if (is.na(sorted_data[i, j])) {
+      if(!is.na(sorted_data[i, j])) {
+        sorted_data[1, j] <- sorted_data[i, j]
+      } else {
         if (stringr::str_starts(sorted_data[i, j-1], "uncl")) {
-          sorted_data[i, j] == sorted_data[i, j-1]
+          sorted_data[i, j] <- sorted_data[i, j-1]
         } else {
-        # sorted_data[i, j] = paste(ranks[j], sorted_data[i, j-1], sep = "_")
-        sorted_data[i, j] = sorted_data[i, j-1]
+          sorted_data[i, j] <- paste0("uncl_", sorted_data[i, j-1])
         }
       }
     }
   }
+
+
+  ranks <-  c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species")
+  colnames(sorted_data) <- ranks[1:n_ranks]
 
   # Convert to phyloseq tax_table
   tax_table <- phyloseq::tax_table(sorted_data)

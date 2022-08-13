@@ -6,7 +6,9 @@
 #' @details A confidence value of 0.5 is recommended for shorter amplicons and a value of 0.8 for full-length 16S rRNA gene sequences.
 #' @return A phyloseq tax_table object
 #' @export
-#'
+#' @importFrom tibble as_tibble
+#' @importFrom dplyr select
+#' @importFrom tidyr separate
 #' @examples
 #' \dontrun{
 #' import_sintax_file_sorted(in_file = "sintax_file.txt", confidence = 0.8)

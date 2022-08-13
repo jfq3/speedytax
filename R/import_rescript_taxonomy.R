@@ -28,7 +28,7 @@ import_rescript_taxonomy <- function(in_file) {
                      stringsAsFactors = FALSE, sep = "\t")
 
   taxa_matrix <-  temp  |>
-    as_tibble() |>
+    tibble::as_tibble() |>
     dplyr::select(-Confidence)  |>
     mutate(Taxon = str_replace_all(Taxon, "__", "_"))  |>
     tidyr::separate(col = Taxon, sep = "; ", into = c("Domain",
