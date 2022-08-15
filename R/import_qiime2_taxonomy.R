@@ -27,20 +27,20 @@ import_qiime2_taxonomy <- function(in_file) {
 
   ranks <- c("d", "p", "c", "o", "f", "g", "s")
 
-  unsorted_data <-  temp |>
+  suppressWarnings(unsorted_data <-  temp |>
     tibble::as_tibble() |>
     dplyr::select(-Confidence) |>
     dplyr::mutate(Taxon = str_replace_all(Taxon, "__", "_")) |>
     tidyr::separate(col = Taxon, sep = "; ", into = ranks[1:n_ranks],
                     fill = "right") |>
-    as.matrix()
+    as.matrix())
 
   rownames(unsorted_data) <- unsorted_data[, 1]
   unsorted_data <- unsorted_data[, -1]
 
   # Sort
   sorted_data <- matrix(data="", ncol = ncol(unsorted_data), nrow = nrow(unsorted_data))
-  colnames(sorted_data) <- ranks
+  colnames(sorted_data) <- colnames(unsorted_data)
   rownames(sorted_data) <- rownames(unsorted_data)
 
   for (i in 1:nrow(unsorted_data)) {
@@ -52,8 +52,8 @@ import_qiime2_taxonomy <- function(in_file) {
 
   # Take care of empty data in first (domain) column
   for (i in 1:nrow(sorted_data)) {
-    if (sorted_data[i, 1] == "") {
-      sorted_data[i, 1] = "uncl_domain"
+    if (sorted_data[i, 1] == "" | sorted_data[i, 1] == "Unassigned") {
+      sorted_data[i, 1] = "uncl_Domain"
     }
   }
 
