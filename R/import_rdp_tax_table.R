@@ -6,7 +6,7 @@
 #' @details A confidence value of 0.5 is recommended for shorter amplicons and a value of 0.8 for full-length 16S rRNA gene sequences.
 #' @return A phyloseq tax_table object
 #' @export
-#'
+#' @importFrom utils read.table
 #' @examples
 #' \dontrun{
 #' import_rdp_tax_table(in_file = "rdp_classifier_result.tsv", confidence = 0.8)

@@ -9,8 +9,9 @@
 #' @importFrom dplyr select mutate pull
 #' @importFrom tibble as_tibble
 #' @importFrom tidyr separate
-#' @importFrom stringr str_starts
+#' @importFrom stringr str_starts str_replace_all
 #' @importFrom phyloseq tax_table
+#' @importFrom utils read.table
 #' @examples
 #' \dontrun{
 #' import_qiime2_taxonomy(in_file = "qiime2_classifier_result.tsv")

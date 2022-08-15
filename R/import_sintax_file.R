@@ -10,6 +10,7 @@
 #' @importFrom tibble as_tibble
 #' @importFrom tidyr separate
 #' @importFrom phyloseq tax_table
+#' @importFrom utils read.table
 #' @examples
 #' \dontrun{
 #' import_sintax_file(in_file = "sintax_tax_table.txt", confidence = 0.8)
