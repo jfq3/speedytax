@@ -17,7 +17,7 @@
 #' }
 #'
 
-import_sintax_file <- function (in_file, confidence = 0.8) {
+import_sintax_file_cpp <- function (in_file, confidence = 0.8) {
   # Read in sintax file.
   temp <- read.table(file = in_file, sep = "\t", fill = TRUE, stringsAsFactors = FALSE)
 
