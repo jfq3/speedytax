@@ -1,4 +1,4 @@
-#' Import RDP Classifier Taxonomy Table
+#' Import RDP Classifier Taxonomy Table cpp
 #' @aliases import_rdp_tax_table_cpp
 #' @param in_file A fix-rank tab-delimited text file output by the RDP Classifier
 #' @param confidence The confidence level for filtering the taxonomy
@@ -9,7 +9,7 @@
 #' @importFrom utils read.table
 #' @examples
 #' \dontrun{
-#' import_rdp_tax_table(in_file = "rdp_classifier_result.tsv", confidence = 0.8)
+#' import_rdp_tax_table_cpp(in_file = "rdp_classifier_result.tsv", confidence = 0.8)
 #' }
 #'
 import_rdp_tax_table_cpp <- function(in_file, confidence=0.5) {

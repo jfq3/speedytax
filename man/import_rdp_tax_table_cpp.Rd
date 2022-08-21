@@ -2,7 +2,7 @@
 % Please edit documentation in R/import_rdp_tax_table_cpp.R
 \name{import_rdp_tax_table_cpp}
 \alias{import_rdp_tax_table_cpp}
-\title{Import RDP Classifier Taxonomy Table}
+\title{Import RDP Classifier Taxonomy Table cpp}
 \usage{
 import_rdp_tax_table_cpp(in_file, confidence)
 }
@@ -15,14 +15,14 @@ import_rdp_tax_table_cpp(in_file, confidence)
 A phyloseq tax_table object
 }
 \description{
-Import RDP Classifier Taxonomy Table
+Import RDP Classifier Taxonomy Table cpp
 }
 \details{
 A confidence value of 0.5 is recommended for shorter amplicons and a value of 0.8 for full-length 16S rRNA gene sequences.
 }
 \examples{
 \dontrun{
-import_rdp_tax_table(in_file = "rdp_classifier_result.tsv", confidence = 0.8)
+import_rdp_tax_table_cpp(in_file = "rdp_classifier_result.tsv", confidence = 0.8)
 }
 
 }
