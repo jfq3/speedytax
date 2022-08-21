@@ -1,4 +1,4 @@
-#' Import SINTAX Classifier Taxonomy
+#' Import SINTAX Classifier Taxonomy cpp
 #' @aliases import_sintax_file_cpp
 #' @param in_file A fix-rank tab-delimited text file output by SINTAX
 #' @param confidence The confidence level for filtering the taxonomy (0.8 by default)
