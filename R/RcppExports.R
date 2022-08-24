@@ -5,7 +5,26 @@ fix_domain_C <- function(taxa_matrix, confidence_matrix, confidence) {
     .Call(`_speedytax_fix_domain_C`, taxa_matrix, confidence_matrix, confidence)
 }
 
+fix_qiime2_domain_C <- function(sorted_data) {
+    .Call(`_speedytax_fix_qiime2_domain_C`, sorted_data)
+}
+
+fix_qiime2_rest_C <- function(sorted_data) {
+    .Call(`_speedytax_fix_qiime2_rest_C`, sorted_data)
+}
+
 fix_rdp_rest_C <- function(taxa_matrix, confidence_matrix, confidence) {
     .Call(`_speedytax_fix_rdp_rest_C`, taxa_matrix, confidence_matrix, confidence)
+}
+
+#' @export
+NULL
+
+getIndex <- function(v, K) {
+    .Call(`_speedytax_getIndex`, v, K)
+}
+
+sort_data <- function(unsorted_data) {
+    .Call(`_speedytax_sort_data`, unsorted_data)
 }
 
