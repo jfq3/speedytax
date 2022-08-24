@@ -50,11 +50,15 @@ import_rdp_tax_table_cpp <- function(in_file, confidence=0.5) {
 
   # Take care of confidences less than cutoff in first column
   rslt <- fix_domain_C(taxa_matrix = taxa_matrix, confidence_matrix = confidence_matrix, confidence = confidence)
+  rm(taxa_matrix)
 
   # Take care of confidences less than cutoff in other columns
-  rslt <- fix_rdp_rest_C(taxa_matrix = rslt, confidence_matrix = confidence_matrix, confidence = confidence)
+  taxa_matrix <- fix_rdp_rest_C(taxa_matrix = rslt, confidence_matrix = confidence_matrix, confidence = confidence)
+  colnames(taxa_matrix) <- ranks
+  rm(rslt)
 
-  class_table <- phyloseq::tax_table(rslt, errorIfNULL=TRUE)
+  class_table <- phyloseq::tax_table(taxa_matrix, errorIfNULL=TRUE)
+
   return(class_table)
 }
 

@@ -63,6 +63,7 @@ import_sintax_file_cpp <- function (in_file, confidence = 0.8) {
 
   # Take care of confidences less than cutoff in other columns
   taxa_matrix <- fix_rdp_rest_C(taxa_matrix = rslt, confidence_matrix = confidence_matrix, confidence = confidence)
+  rm(rslt)
 
   ranks <- c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species")
   colnames(taxa_matrix) <- ranks[1:ncol(taxa_matrix)]
