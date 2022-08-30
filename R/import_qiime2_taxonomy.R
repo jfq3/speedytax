@@ -62,7 +62,7 @@ import_qiime2_taxonomy <- function(in_file) {
   # Fill in other cases of empty data
   for (i in 1:nrow(sorted_data)) {
     for (j in 2:ncol(sorted_data)) {
-      if(!is.na(sorted_data[i, j])) {
+      if(sorted_data[i, j] != "") {
         sorted_data[1, j] <- sorted_data[i, j]
       } else {
         if (stringr::str_starts(sorted_data[i, j-1], "uncl")) {
