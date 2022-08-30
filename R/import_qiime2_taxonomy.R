@@ -38,6 +38,7 @@ import_qiime2_taxonomy <- function(in_file) {
 
   rownames(unsorted_data) <- unsorted_data[, 1]
   unsorted_data <- unsorted_data[, -1]
+  unsorted_data[is.na(unsorted_data)] <- ''
 
   # Sort
   sorted_data <- matrix(data="", ncol = ncol(unsorted_data), nrow = nrow(unsorted_data))
