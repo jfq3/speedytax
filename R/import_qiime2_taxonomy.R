@@ -38,6 +38,7 @@ import_qiime2_taxonomy <- function(in_file) {
 
   rownames(unsorted_data) <- unsorted_data[, 1]
   unsorted_data <- unsorted_data[, -1]
+  unsorted_data[is.na(unsorted_data)] <- ""
 
   # Sort
   sorted_data <- matrix(data="", ncol = ncol(unsorted_data), nrow = nrow(unsorted_data))
@@ -61,7 +62,7 @@ import_qiime2_taxonomy <- function(in_file) {
   # Fill in other cases of empty data
   for (i in 1:nrow(sorted_data)) {
     for (j in 2:ncol(sorted_data)) {
-      if(!is.na(sorted_data[i, j])) {
+      if(sorted_data[i, j] != "") {
         sorted_data[1, j] <- sorted_data[i, j]
       } else {
         if (stringr::str_starts(sorted_data[i, j-1], "uncl")) {
