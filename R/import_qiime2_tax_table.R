@@ -1,6 +1,6 @@
-#' Import QIIME Classification Table
-#' @aliases import_qiime2_taxonomy
-#' @usage import_qiime2_taxonomy(in_file)
+#' Import QIIME2 Classification Table
+#' @aliases import_qiime2_tax_table
+#' @usage import_qiime2_tax_table(in_file)
 #' @param in_file A tab-delimited classification table output by QIIME2
 #'
 #' @return A phyloseq tax_table object
@@ -17,7 +17,7 @@
 #' import_qiime2_taxonomy(in_file = "qiime2_classifier_result.tsv")
 #' }
 
-import_qiime2_taxonomy <- function(in_file) {
+import_qiime2_tax_table <- function(in_file) {
   temp <- utils::read.table(file = in_file, header = TRUE,
                      stringsAsFactors = FALSE, sep = "\t")
   # Determine the number of ranks

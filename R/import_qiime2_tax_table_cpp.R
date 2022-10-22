@@ -1,6 +1,6 @@
-#' Import QIIME Classification Table cpp
-#' @aliases import_qiime2_taxtable_cpp
-#' @usage import_qiime2_taxtable_cpp(in_file)
+#' Import QIIME2 Classification Table cpp
+#' @aliases import_qiime2_tax_table_cpp
+#' @usage import_qiime2_tax_table_cpp(in_file)
 #' @param in_file A tab-delimited classification table output by QIIME2
 #'
 #' @return A phyloseq tax_table object
