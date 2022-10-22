@@ -26,7 +26,8 @@ import_qiime2_tax_table_cpp <- function(in_file) {
     dplyr::mutate(n_ranks = stringr::str_count(Taxon, ";")) |>
     dplyr::pull(n_ranks) |> max()
 
-  ranks <- c("d_", "p_", "c_", "o_", "f_", "g_", "s_")
+  # ranks <- c("d_", "p_", "c_", "o_", "f_", "g_", "s_")
+  ranks <- c("d", "p", "c", "o", "f", "g", "s")
 
   suppressWarnings(unsorted_data <-  temp |>
     tibble::as_tibble() |>
