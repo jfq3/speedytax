@@ -14,10 +14,10 @@
 #' @importFrom utils read.table
 #' @examples
 #' \dontrun{
-#' import_qiime2_taxtable_cpp(in_file = "qiime2_classifier_result.tsv")
+#' import_qiime2_tax_table_cpp(in_file = "qiime2_classifier_result.tsv")
 #' }
 
-import_qiime2_taxtable_cpp <- function(in_file) {
+import_qiime2_tax_table_cpp <- function(in_file) {
   temp <- utils::read.table(file = in_file, header = TRUE,
                      stringsAsFactors = FALSE, sep = "\t")
   # Determine the number of ranks
