@@ -26,10 +26,9 @@ import_qiime2_tax_table_cpp <- function(in_file) {
     dplyr::mutate(n_ranks = stringr::str_count(Taxon, ";")) |>
     dplyr::pull(n_ranks) |> max()
 
-  # ranks <- c("d_", "p_", "c_", "o_", "f_", "g_", "s_")
   ranks <- c("d", "p", "c", "o", "f", "g", "s")
 
-  suppressWarnings(unsorted_data <-  temp |>
+  suppressWarnings(sorted_data <-  temp |>
     tibble::as_tibble() |>
     dplyr::select(-Confidence) |>
     dplyr::mutate(Taxon = str_replace_all(Taxon, "__", "_")) |>
@@ -37,26 +36,9 @@ import_qiime2_tax_table_cpp <- function(in_file) {
                     fill = "right") |>
     as.matrix())
 
-  rownames(unsorted_data) <- unsorted_data[, 1]
-  unsorted_data <- unsorted_data[, -1]
-  unsorted_data[is.na(unsorted_data)] <-  ""
-
-  # Sort
-  # sorted_data <- matrix(data="", ncol = ncol(unsorted_data), nrow = nrow(unsorted_data))
-  # colnames(sorted_data) <- colnames(unsorted_data)
-  # rownames(sorted_data) <- rownames(unsorted_data)
-  #
-  # for (i in 1:nrow(unsorted_data)) {
-  #   for (j in 1:ncol(unsorted_data)) {
-  #     rank <- ranks[j]
-  #     sorted_data[i, rank] <- unsorted_data[i, j]
-  #   }
-  # }
-
-  sorted_data <- sort_data(unsorted_data)
-
-  sorted_data <- as.matrix(sorted_data)
-  sorted_data[is.na(sorted_data)] <- ""
+  rownames(sorted_data) <- sorted_data[, 1]
+  sorted_data <- sorted_data[, -1]
+  sorted_data[is.na(sorted_data)] <-  ""
 
   # Take care of empty data in first (domain) column
   rslt <- fix_qiime2_domain_C(sorted_data = sorted_data)
