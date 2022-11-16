@@ -28,7 +28,7 @@ import_qiime2_tax_table <- function(in_file) {
 
   ranks <- c("d", "p", "c", "o", "f", "g", "s")
 
-  suppressWarnings(unsorted_data <-  temp |>
+  suppressWarnings(sorted_data <-  temp |>
     tibble::as_tibble() |>
     dplyr::select(-Confidence) |>
     dplyr::mutate(Taxon = str_replace_all(Taxon, "__", "_")) |>
@@ -36,21 +36,9 @@ import_qiime2_tax_table <- function(in_file) {
                     fill = "right") |>
     as.matrix())
 
-  rownames(unsorted_data) <- unsorted_data[, 1]
-  unsorted_data <- unsorted_data[, -1]
-  unsorted_data[is.na(unsorted_data)] <- ''
-
-  # Sort
-  sorted_data <- matrix(data="", ncol = ncol(unsorted_data), nrow = nrow(unsorted_data))
-  colnames(sorted_data) <- colnames(unsorted_data)
-  rownames(sorted_data) <- rownames(unsorted_data)
-
-  for (i in 1:nrow(unsorted_data)) {
-    for (j in 1:ncol(unsorted_data)) {
-      rank <- ranks[j]
-      sorted_data[i, rank] <- unsorted_data[i, j]
-    }
-  }
+  rownames(sorted_data) <- sorted_data[, 1]
+  sorted_data <- sorted_data[, -1]
+  sorted_data[is.na(sorted_data)] <- ""
 
   # Take care of empty data in first (domain) column
   for (i in 1:nrow(sorted_data)) {
