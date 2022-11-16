@@ -20,6 +20,6 @@ This function expects 7 ranks: Domain, Phylum, Class, Order, Family, Genus and S
 }
 \examples{
 \dontrun{
-import_qiime2_taxonomy(in_file = "qiime2_classifier_result.tsv")
+import_qiime2_tax_table(in_file = "qiime2_classifier_result.tsv")
 }
 }

@@ -69,17 +69,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// sort_data
-StringMatrix sort_data(StringMatrix unsorted_data);
-RcppExport SEXP _speedytax_sort_data(SEXP unsorted_dataSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< StringMatrix >::type unsorted_data(unsorted_dataSEXP);
-    rcpp_result_gen = Rcpp::wrap(sort_data(unsorted_data));
-    return rcpp_result_gen;
-END_RCPP
-}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_speedytax_copy_SM", (DL_FUNC) &_speedytax_copy_SM, 1},
@@ -87,7 +76,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_speedytax_fix_qiime2_domain_C", (DL_FUNC) &_speedytax_fix_qiime2_domain_C, 1},
     {"_speedytax_fix_qiime2_rest_C", (DL_FUNC) &_speedytax_fix_qiime2_rest_C, 1},
     {"_speedytax_fix_rdp_rest_C", (DL_FUNC) &_speedytax_fix_rdp_rest_C, 3},
-    {"_speedytax_sort_data", (DL_FUNC) &_speedytax_sort_data, 1},
     {NULL, NULL, 0}
 };
 
