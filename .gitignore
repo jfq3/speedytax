@@ -3,3 +3,17 @@
 .RData
 .Ruserdata
 classified_renamed.txt
+qiime2_gg2_classification.tsv
+gtdb.class
+sample_rdp_classification_table.tsv
+sample_gg_sintax.tsv
+gtdb_sintax_sample.tsv
+gtdb_qiime2_core1_taxonomy.tsv
+gtdb_qiime_sample.tsv
+gtdb_qiime_sample.txt
+core1_rdp_gg_classified.txt
+classified_gtdb_sintax.txt
+loop_sample.txt
+test_function.R
+new_gtdb_class.txt
+how_to_detach_development_version.R
