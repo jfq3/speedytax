@@ -19,7 +19,10 @@ Import QIIME2 Classification Table
 This function expects 7 ranks: Domain, Phylum, Class, Order, Family, Genus and Species.
 }
 \examples{
+taxonomy_file <- read_tax_example("qiime2_classification_table.tsv")
+example_tax_table <- import_qiime2_tax_table(in_file = taxonomy_file)
+example_tax_table
 \dontrun{
-import_qiime2_tax_table(in_file = "qiime2_classifier_result.tsv")
+import_qiime2_tax_table(in_file = "qiime2_classification_table.tsv")
 }
 }

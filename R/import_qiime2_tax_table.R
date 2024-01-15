@@ -13,8 +13,11 @@
 #' @importFrom phyloseq tax_table
 #' @importFrom utils read.table
 #' @examples
+#' taxonomy_file <- read_tax_example("qiime2_classification_table.tsv")
+#' example_tax_table <- import_qiime2_tax_table(in_file = taxonomy_file)
+#' example_tax_table
 #' \dontrun{
-#' import_qiime2_tax_table(in_file = "qiime2_classifier_result.tsv")
+#' import_qiime2_tax_table(in_file = "qiime2_classification_table.tsv")
 #' }
 
 import_qiime2_tax_table <- function(in_file) {
