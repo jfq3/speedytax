@@ -24,6 +24,9 @@ import_qiime2_tax_table_cpp <- function(in_file) {
   temp <- utils::read.table(file = in_file, header = TRUE,
                      stringsAsFactors = FALSE, sep = "\t")
 
+  # Initialize global variables.
+  Taxon <- Confidence <- NULL
+
   # Determine the number of ranks
   n_ranks <- temp |>
     dplyr::select(Taxon) |>
