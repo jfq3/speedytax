@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # speedytax
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/jfq3/speedytax/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jfq3/speedytax/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of speedytax is to quickly import classification files generated with the QIIME2 classifier, the RDP Classifier and the vsearch sintax classifier as phyloseq tax_table objects.  
