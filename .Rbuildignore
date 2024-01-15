@@ -1,2 +1,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+how_to_detach_development_version.R
+test_function.R
+^README\.Rmd$
