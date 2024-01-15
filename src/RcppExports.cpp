@@ -10,17 +10,6 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// copy_SM
-StringMatrix copy_SM(StringMatrix x);
-RcppExport SEXP _speedytax_copy_SM(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< StringMatrix >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(copy_SM(x));
-    return rcpp_result_gen;
-END_RCPP
-}
 // fix_domain_C
 StringMatrix fix_domain_C(StringMatrix taxa_matrix, NumericMatrix confidence_matrix, double confidence);
 RcppExport SEXP _speedytax_fix_domain_C(SEXP taxa_matrixSEXP, SEXP confidence_matrixSEXP, SEXP confidenceSEXP) {
@@ -69,25 +58,12 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// sort_data
-StringMatrix sort_data(StringMatrix unsorted_data);
-RcppExport SEXP _speedytax_sort_data(SEXP unsorted_dataSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< StringMatrix >::type unsorted_data(unsorted_dataSEXP);
-    rcpp_result_gen = Rcpp::wrap(sort_data(unsorted_data));
-    return rcpp_result_gen;
-END_RCPP
-}
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_speedytax_copy_SM", (DL_FUNC) &_speedytax_copy_SM, 1},
     {"_speedytax_fix_domain_C", (DL_FUNC) &_speedytax_fix_domain_C, 3},
     {"_speedytax_fix_qiime2_domain_C", (DL_FUNC) &_speedytax_fix_qiime2_domain_C, 1},
     {"_speedytax_fix_qiime2_rest_C", (DL_FUNC) &_speedytax_fix_qiime2_rest_C, 1},
     {"_speedytax_fix_rdp_rest_C", (DL_FUNC) &_speedytax_fix_rdp_rest_C, 3},
-    {"_speedytax_sort_data", (DL_FUNC) &_speedytax_sort_data, 1},
     {NULL, NULL, 0}
 };
 
