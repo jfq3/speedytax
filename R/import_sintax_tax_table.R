@@ -1,8 +1,8 @@
-#' Import SINTAX Taxonomy Table cpp
-#' @aliases import_sintax_tax_table_cpp
+#' Import SINTAX Taxonomy Table
+#' @aliases import_sintax_tax_table
 #' @param in_file A fix-rank tab-delimited text file output by SINTAX
 #' @param confidence The confidence level for filtering the taxonomy (0.8 by default)
-#' @usage import_sintax_tax_table_cpp(in_file, confidence)
+#' @usage import_sintax_tax_table(in_file, confidence)
 #' @details A confidence value of 0.5 is recommended for shorter amplicons and a value of 0.8 for full-length 16S rRNA gene sequences.
 #' @return A phyloseq tax_table object
 #' @export
@@ -13,14 +13,14 @@
 #' @importFrom utils read.table
 #' @examples
 #' taxonomy_file <- read_tax_example("sintax_classification_table.tsv")
-#' example_tax_table <- import_sintax_tax_table_cpp(in_file = taxonomy_file)
+#' example_tax_table <- import_sintax_tax_table(in_file = taxonomy_file)
 #' example_tax_table
 #' \dontrun{
-#' import_sintax_tax_table_cpp(in_file = "sintax_classification_table.tsv", confidence = 0.8)
+#' import_sintax_tax_table(in_file = "sintax_classification_table.tsv", confidence = 0.8)
 #' }
 #'
 
-import_sintax_tax_table_cpp <- function (in_file, confidence = 0.8) {
+import_sintax_tax_table <- function (in_file, confidence = 0.8) {
   # Read in sintax file.
   temp <- read.table(file = in_file, sep = "\t", fill = TRUE, stringsAsFactors = FALSE)
 

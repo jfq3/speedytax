@@ -1,21 +1,21 @@
-#' Import RDP Classifier Taxonomy Table cpp
-#' @aliases import_rdp_tax_table_cpp
+#' Import RDP Classifier Taxonomy Table
+#' @aliases import_rdp_tax_table
 #' @param in_file A fix-rank tab-delimited text file output by the RDP Classifier
 #' @param confidence The confidence level for filtering the taxonomy
-#' @usage import_rdp_tax_table_cpp(in_file, confidence)
+#' @usage import_rdp_tax_table(in_file, confidence)
 #' @details A confidence value of 0.5 is recommended for shorter amplicons and a value of 0.8 for full-length 16S rRNA gene sequences.
 #' @return A phyloseq tax_table object
 #' @export
 #' @importFrom utils read.table
 #' @examples
 #' taxonomy_file <- read_tax_example("rdp_classification_table.tsv")
-#' example_tax_table <- import_rdp_tax_table_cpp(in_file = taxonomy_file)
+#' example_tax_table <- import_rdp_tax_table(in_file = taxonomy_file)
 #' example_tax_table
 #' \dontrun{
-#' import_rdp_tax_table_cpp(in_file = "rdp_classification_table.tsv", confidence = 0.8)
+#' import_rdp_tax_table(in_file = "rdp_classification_table.tsv", confidence = 0.8)
 #' }
 #'
-import_rdp_tax_table_cpp <- function(in_file, confidence=0.5) {
+import_rdp_tax_table <- function(in_file, confidence=0.5) {
   #Begin with fixed rank output from command line version of classifier.
   class_table <- utils::read.table(in_file, sep="\t", fill=TRUE, stringsAsFactors=FALSE)
   class_table <- class_table[order(class_table[, 1]), ]

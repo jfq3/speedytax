@@ -1,6 +1,6 @@
-#' Import QIIME2 Classification Table cpp
-#' @aliases import_qiime2_tax_table_cpp
-#' @usage import_qiime2_tax_table_cpp(in_file)
+#' Import QIIME2 Classification Table
+#' @aliases import_qiime2_tax_table
+#' @usage import_qiime2_tax_table(in_file)
 #' @param in_file A tab-delimited classification table output by QIIME2
 #'
 #' @return A phyloseq tax_table object
@@ -14,13 +14,13 @@
 #' @importFrom utils read.table
 #' @examples
 #' taxonomy_file <- read_tax_example("qiime2_classification_table.tsv")
-#' example_tax_table <- import_qiime2_tax_table_cpp(in_file = taxonomy_file)
+#' example_tax_table <- import_qiime2_tax_table(in_file = taxonomy_file)
 #' example_tax_table
 #' \dontrun{
-#' import_qiime2_tax_table_cpp(in_file = "qiime2_classification_table.tsv")
+#' import_qiime2_tax_table(in_file = "qiime2_classification_table.tsv")
 #' }
 
-import_qiime2_tax_table_cpp <- function(in_file) {
+import_qiime2_tax_table <- function(in_file) {
   temp <- utils::read.table(file = in_file, header = TRUE,
                      stringsAsFactors = FALSE, sep = "\t")
 
