@@ -5,3 +5,4 @@ test_function.R
 ^README\.Rmd$
 ^\.github$
 ^cran-comments\.md$
+^CRAN-SUBMISSION$
