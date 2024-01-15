@@ -15,5 +15,5 @@ directory. This function make them easy to access
 }
 \examples{
 read_tax_example()
-read_tax_example("challenge.csv")
+read_tax_example("rdp_classification_table.tsv")
 }

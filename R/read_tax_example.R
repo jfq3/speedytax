@@ -7,7 +7,7 @@
 #' @export
 #' @examples
 #' read_tax_example()
-#' read_tax_example("challenge.csv")
+#' read_tax_example("rdp_classification_table.tsv")
 read_tax_example <- function(file = NULL) {
   if (is.null(file)) {
     dir(system.file("extdata", package = "speedytax"))
