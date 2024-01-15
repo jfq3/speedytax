@@ -21,8 +21,11 @@ Import RDP Classifier Taxonomy Table cpp
 A confidence value of 0.5 is recommended for shorter amplicons and a value of 0.8 for full-length 16S rRNA gene sequences.
 }
 \examples{
+taxonomy_file <- read_tax_example("rdp_tax_table.tsv")
+example_tax_table <- import_rdp_tax_table_cpp(in_file = taxonomy_file)
+example_tax_table
 \dontrun{
-import_rdp_tax_table_cpp(in_file = "rdp_classifier_result.tsv", confidence = 0.8)
+import_rdp_tax_table_cpp(in_file = "rdp_tax_table.tsv", confidence = 0.8)
 }
 
 }

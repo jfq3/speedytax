@@ -12,12 +12,19 @@
 #' @importFrom phyloseq tax_table
 #' @importFrom utils read.table
 #' @examples
+#' taxonomy_file <- read_tax_example("sintax_tax_table.tsv")
+#' example_tax_table <- import_sintax_tax_table(in_file = taxonomy_file)
+#' example_tax_table
 #' \dontrun{
-#' import_sintax_tax_table(in_file = "sintax_tax_table.txt", confidence = 0.8)
+#' import_sintax_tax_table(in_file = "sintax_tax_table.tsv", confidence = 0.8)
 #' }
 #'
 
 import_sintax_tax_table <- function (in_file, confidence = 0.8) {
+
+  # Initialize global variables
+  V1 <- V2 <- NULL
+
   # Read in sintax file.
   temp <- read.table(file = in_file, sep = "\t", fill = TRUE, stringsAsFactors = FALSE)
 

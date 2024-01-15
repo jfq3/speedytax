@@ -13,6 +13,9 @@
 #' @importFrom phyloseq tax_table
 #' @importFrom utils read.table
 #' @examples
+#' taxonomy_file <- read_tax_example("qiime2_tax_table.tsv")
+#' example_tax_table <- import_qiime2_tax_table(in_file = taxonomy_file)
+#' example_tax_table
 #' \dontrun{
 #' import_qiime2_tax_table_cpp(in_file = "qiime2_classifier_result.tsv")
 #' }
@@ -20,6 +23,10 @@
 import_qiime2_tax_table_cpp <- function(in_file) {
   temp <- utils::read.table(file = in_file, header = TRUE,
                      stringsAsFactors = FALSE, sep = "\t")
+
+  # Initialize global variables
+  Taxon <- Confidence <- NULL
+
   # Determine the number of ranks
   n_ranks <- temp |>
     dplyr::select(Taxon) |>

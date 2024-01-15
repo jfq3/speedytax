@@ -16,10 +16,13 @@ A phyloseq tax_table object
 Import QIIME2 Classification Table
 }
 \details{
-This function expects 7 ranks: Domain, Phylum, Class, Order, Family, Genus and Species.
+This function expects up to 7 ranks: Domain, Phylum, Class, Order, Family, Genus and Species.
 }
 \examples{
+taxonomy_file <- read_tax_example("qiime2_tax_table.tsv")
+example_tax_table <- import_qiime2_tax_table(in_file = taxonomy_file)
+example_tax_table
 \dontrun{
-import_qiime2_taxonomy(in_file = "qiime2_classifier_result.tsv")
+import_qiime2_taxonomy(in_file = "qiime2_tax_table.tsv")
 }
 }

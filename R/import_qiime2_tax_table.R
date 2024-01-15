@@ -4,7 +4,7 @@
 #' @param in_file A tab-delimited classification table output by QIIME2
 #'
 #' @return A phyloseq tax_table object
-#' @details This function expects 7 ranks: Domain, Phylum, Class, Order, Family, Genus and Species.
+#' @details This function expects up to 7 ranks: Domain, Phylum, Class, Order, Family, Genus and Species.
 #' @export
 #' @importFrom dplyr select mutate pull
 #' @importFrom tibble as_tibble
@@ -13,11 +13,15 @@
 #' @importFrom phyloseq tax_table
 #' @importFrom utils read.table
 #' @examples
+#' taxonomy_file <- read_tax_example("qiime2_tax_table.tsv")
+#' example_tax_table <- import_qiime2_tax_table(in_file = taxonomy_file)
+#' example_tax_table
 #' \dontrun{
-#' import_qiime2_taxonomy(in_file = "qiime2_classifier_result.tsv")
+#' import_qiime2_taxonomy(in_file = "qiime2_tax_table.tsv")
 #' }
 
 import_qiime2_tax_table <- function(in_file) {
+  Taxon <- Confidence <- NULL
   temp <- utils::read.table(file = in_file, header = TRUE,
                      stringsAsFactors = FALSE, sep = "\t")
   # Determine the number of ranks
