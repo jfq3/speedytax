@@ -1,0 +1,11 @@
+Feature ID	Taxon	Confidence
+ASV_000001	d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Pseudomonadaceae; g__Pseudomonas_E	0.9994616433925035
+ASV_000002	d__Bacteria	1.0000000000000113
+ASV_000003	d__Bacteria; p__CSP1-3; c__CSP1-3; o__CSP1-3; f__13-1-40CM-64-14; g__NP-4; s__NP-4_sp005882295;	0.9346546337638525
+ASV_000004	d__Bacteria; p__CSP1-3; c__CSP1-3; o__CSP1-3; f__13-1-40CM-64-14; g__NP-4; s__NP-4_sp005882295;	0.9999062211677373
+ASV_000005	d__Bacteria; p__Actinobacteriota; c__UBA4738; o__UBA4738; f__HRBIN12; g__HRBIN12; s__HRBIN12_sp004366195;	0.9999987207697469
+ASV_000006	d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Burkholderiaceae; g__Noviherbaspirillum	0.7688320740031078
+ASV_000007	d__Bacteria; p__Actinobacteriota; c__Actinomycetia; o__Actinomycetales; f__Micrococcaceae	0.9999999962880451
+ASV_000008	d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Burkholderiaceae; g__Polaromonas	0.9999246781201223
+ASV_000009	d__Bacteria; p__Chloroflexota; c__Limnocylindria; o__QHBO01; f__QHBO01; g__CF-167; s__CF-167_sp013816405;	0.999999523019767
+ASV_000010	d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Burkholderiaceae; g__Ramlibacter	0.9747353895508936
