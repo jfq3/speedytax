@@ -25,7 +25,7 @@ When importing RDP Classifier and sintax results, the confidence value can be sp
 
 For each rank, a letter preface indicates the rank: "p_" for phylum, "c_" for class, *etc*. All ranks are filled, If a taxa is unclassified at a given rank(*i.e.* the confidence value at that rank is less than that specified), the letter for the higher rank is prepended to the classification at the higher rank.  
 
-For example, if a taxa is classified as f_Oxalobacteraceae with a confidence of 0.7 but the confidence at the genus level is only 0.4, then its classification at the genus level will be g_f_Oxalobacteraceae. Tis is made clearer by examining the example below.    
+For example, if a taxa is classified as f_Oxalobacteraceae with a confidence of 0.7 but the confidence at the genus level is only 0.4, then its classification at the genus level will be g_f_Oxalobacteraceae. This is made clearer by examining the example below.    
 
 ## Installation
 

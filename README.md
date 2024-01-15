@@ -25,7 +25,7 @@ classification at the higher rank.
 For example, if a taxa is classified as f_Oxalobacteraceae with a
 confidence of 0.7 but the confidence at the genus level is only 0.4,
 then its classification at the genus level will be g_f_Oxalobacteraceae.
-Tis is made clearer by examining the example below.
+This is made clearer by examining the example below.
 
 ## Installation
 
