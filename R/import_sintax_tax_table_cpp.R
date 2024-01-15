@@ -25,7 +25,7 @@ import_sintax_tax_table_cpp <- function (in_file, confidence = 0.8) {
   temp <- read.table(file = in_file, sep = "\t", fill = TRUE, stringsAsFactors = FALSE)
 
   # Initialize global variables
-  V1 <- V2 <- NULL
+  V1 <- V2 <- taxa <- NULL
 
   # Determine the number of ranks
   n_ranks <- temp |>
