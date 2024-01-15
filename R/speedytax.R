@@ -10,5 +10,6 @@
 #' @importFrom Rcpp sourceCpp
 #' @useDynLib speedytax, .registration = TRUE
 #' @name speedytax
+#' @aliases speedytax-package
 ## usethis namespace: end
 NULL
