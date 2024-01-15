@@ -6,7 +6,6 @@ Authors@R:
            comment = c(ORCID = "0000-0002-7669-1595"))
 Description: Import classification reuslts from the RDP Classifier, sintax
     clasifier and the QIIME2 classifiers into a phyloseq tax_table object.
-SystemRequirements: C++11
 License: MIT + file LICENSE
 Imports: 
     dplyr,
