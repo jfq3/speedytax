@@ -22,7 +22,7 @@ A confidence value of 0.5 is recommended for shorter amplicons and a value of 0.
 }
 \examples{
 taxonomy_file <- read_tax_example("sintax_tax_table.tsv")
-example_tax_table <- import_sintax_tax_table(in_file = taxonomy_file)
+example_tax_table <- import_sintax_tax_table_cpp(in_file = taxonomy_file)
 example_tax_table
 \dontrun{
 import_sintax_tax_table_cpp(in_file = "sintax_tax_table.tsv", confidence = 0.8)
