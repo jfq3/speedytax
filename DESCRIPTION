@@ -1,6 +1,6 @@
 Package: speedytax
-Title: Rapidly Import Classifier Results into phyloseq
-Version: 0.0.0.9000
+Title: Rapidly Import Classifier Results into Phyloseq
+Version: 1.0.0
 Authors@R: 
     person("John", "Quensen", email = "quensenj@msu.edu", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-7669-1595"))
