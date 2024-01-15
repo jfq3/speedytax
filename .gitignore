@@ -2,4 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
-classified_renamed.txt
+test_function.R
+how_to_detach_development_version.R
