@@ -24,6 +24,9 @@ import_sintax_tax_table <- function (in_file, confidence = 0.8) {
   # Read in sintax file.
   temp <- read.table(file = in_file, sep = "\t", fill = TRUE, stringsAsFactors = FALSE)
 
+  # Initialize global variables
+  V1 <- V2 <- NULL
+
   # Determine the number of ranks
   n_ranks <- temp |>
     dplyr::select(V2) |>
