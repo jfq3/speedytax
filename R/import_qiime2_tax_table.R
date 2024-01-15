@@ -14,7 +14,7 @@
 #' @importFrom utils read.table
 #' @examples
 #' \dontrun{
-#' import_qiime2_taxonomy(in_file = "qiime2_classifier_result.tsv")
+#' import_qiime2_taxonomy(in_file = "qiime2_class_table.tsv")
 #' }
 
 import_qiime2_tax_table <- function(in_file) {
