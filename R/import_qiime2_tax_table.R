@@ -31,7 +31,7 @@ import_qiime2_tax_table <- function(in_file) {
   n_ranks <- temp |>
     dplyr::select(Taxon) |>
     dplyr::mutate(n_ranks = stringr::str_count(Taxon, ";")) |>
-    dplyr::pull(n_ranks) |> max()
+    dplyr::pull(n_ranks) |> max() + 1
 
   ranks <- c("d", "p", "c", "o", "f", "g", "s")
 
