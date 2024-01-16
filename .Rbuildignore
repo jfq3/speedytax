@@ -6,3 +6,4 @@ test_function.R
 ^\.github$
 ^cran-comments\.md$
 ^CRAN-SUBMISSION$
+^LICENSE\.md$
