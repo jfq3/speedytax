@@ -1,11 +1,11 @@
 Package: speedytax
-Title: Rapidly Import Classifier Results into Phyloseq
-Version: 1.0.2
+Title: Rapidly Import Classifier Results into 'phyloseq'
+Version: 1.0.3
 Authors@R: 
     person("John", "Quensen", email = "quensenj@msu.edu", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-7669-1595"))
-Description: Import classification results from the RDP Classifier, vsearch sintax
-    classifier and the QIIME2 classifiers into phyloseq tax_table objects.
+Description: Import classification results from the 'RDP Classifier,' 'vsearch sintax'
+    and the 'QIIME2' classifiers into 'phyloseq' tax_table objects.
 License: MIT + file LICENSE
 Imports: 
     dplyr,
