@@ -8,13 +8,10 @@
 #' @export
 #' @importFrom utils read.table
 #' @examples
-#' taxonomy_file <- read_tax_example("rdp_classification_table.tsv")
+#' taxonomy_file <- system.file("extdata", "rdp_classification_table.tsv", package = "speedytax")
 #' example_tax_table <- import_rdp_tax_table(in_file = taxonomy_file)
 #' example_tax_table
-#' \dontrun{
-#' import_rdp_tax_table(in_file = "rdp_classification_table.tsv", confidence = 0.8)
-#' }
-#'
+
 import_rdp_tax_table <- function(in_file, confidence=0.5) {
   #Begin with fixed rank output from command line version of classifier.
   class_table <- utils::read.table(in_file, sep="\t", fill=TRUE, stringsAsFactors=FALSE)

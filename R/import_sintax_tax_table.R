@@ -12,13 +12,9 @@
 #' @importFrom phyloseq tax_table
 #' @importFrom utils read.table
 #' @examples
-#' taxonomy_file <- read_tax_example("sintax_classification_table.tsv")
+#' taxonomy_file <- system.file("extdata", "sintax_classification_table.tsv", package = "speedytax")
 #' example_tax_table <- import_sintax_tax_table(in_file = taxonomy_file)
 #' example_tax_table
-#' \dontrun{
-#' import_sintax_tax_table(in_file = "sintax_classification_table.tsv", confidence = 0.8)
-#' }
-#'
 
 import_sintax_tax_table <- function (in_file, confidence = 0.8) {
   # Read in sintax file.

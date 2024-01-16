@@ -21,11 +21,7 @@ Import SINTAX Taxonomy Table
 A confidence value of 0.5 is recommended for shorter amplicons and a value of 0.8 for full-length 16S rRNA gene sequences.
 }
 \examples{
-taxonomy_file <- read_tax_example("sintax_classification_table.tsv")
+taxonomy_file <- system.file("extdata", "sintax_classification_table.tsv", package = "speedytax")
 example_tax_table <- import_sintax_tax_table(in_file = taxonomy_file)
 example_tax_table
-\dontrun{
-import_sintax_tax_table(in_file = "sintax_classification_table.tsv", confidence = 0.8)
-}
-
 }
