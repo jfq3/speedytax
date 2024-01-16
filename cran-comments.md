@@ -1,4 +1,12 @@
-## Resubmission
+## Second Resubmission
+
+1. In this resubmission I have addressed the note regarding "License stub records with missing/empty fields" I have changed Year to YEAR in the LICENSE file.
+
+2. I changed the version number from 1.0.1 to 1.0.2 to reflect this change.
+
+I belileve the one remaining note CRAN generates is because this is a new submission.
+
+## First Resubmission
 
 This is a resubmission. In this version I have:
 
