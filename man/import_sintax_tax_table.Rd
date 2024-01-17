@@ -18,10 +18,22 @@ A phyloseq tax_table object
 Import SINTAX Taxonomy Table
 }
 \details{
+This function works with both vsearch USEARCH sintax results.
+
 A confidence value of 0.5 is recommended for shorter amplicons and a value of 0.8 for full-length 16S rRNA gene sequences.
 }
 \examples{
-taxonomy_file <- system.file("extdata", "sintax_classification_table.tsv", package = "speedytax")
+# With a vsearch sintax result
+taxonomy_file <- system.file("extdata", "vsearch_sintax_classification_table.tsv", package = "speedytax")
 example_tax_table <- import_sintax_tax_table(in_file = taxonomy_file)
 example_tax_table
+# With a USEARCH sintax result
+taxonomy_file <- system.file("extdata", "usearch_sintax_classification_table.tsv", package = "speedytax")
+example_tax_table <- import_sintax_tax_table(in_file = taxonomy_file)
+example_tax_table
+}
+\references{
+Rognes T, Flouri T, Nichols B, Quince C, Mahé F. (2016) VSEARCH: a versatile open source tool for metagenomics. PeerJ 4:e2584. doi: 10.7717/peerj.2584
+
+Edgar RC (2016) SINTAX: a simple non-Bayesian taxonomy classifier for 16S and ITS sequences. bioRxiv. doi:10.1101/074161
 }
