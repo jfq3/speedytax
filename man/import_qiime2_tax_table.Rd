@@ -13,7 +13,7 @@ import_qiime2_tax_table(in_file)
 A phyloseq tax_table object
 }
 \description{
-Import QIIME2 Classification Table
+Import taxonomy results exported from the QIIME2 Bayesian classifiers
 }
 \details{
 This function expects up to 7 ranks (Domain, Phylum, Class, Order, Family, Genus and Species) but determines the number actually in the file.
