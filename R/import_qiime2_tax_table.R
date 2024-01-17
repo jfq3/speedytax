@@ -1,4 +1,7 @@
 #' Import QIIME2 Classification Table
+#'
+#' Import taxonomy results exported from the QIIME2 Bayesian classifiers
+#'
 #' @aliases import_qiime2_tax_table
 #' @usage import_qiime2_tax_table(in_file)
 #' @param in_file A tab-delimited classification table output by QIIME2
