@@ -15,12 +15,12 @@ import_sintax_tax_table(in_file, confidence)
 A phyloseq tax_table object
 }
 \description{
-Import SINTAX Taxonomy Table
+Imports taxonomy files created with USEARCH and vsearch sintax commands
 }
 \details{
 This function works with both vsearch and USEARCH sintax results.
 
-A confidence value of 0.8 for full-length 16S rRNA gene sequences and a value of 0.5 is recommended for shorter amplicons.
+A confidence value of 0.8 is recommended for full-length 16S rRNA gene sequences and a value of 0.5 is recommended for shorter amplicons.
 }
 \examples{
 # With a vsearch sintax result
