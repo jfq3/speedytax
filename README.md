@@ -16,10 +16,10 @@ When importing RDP Classifier and sintax results, the confidence value
 can be specified on import. In the case of the QIIME2 classifier the
 confidence value must be given when calling the classifier.
 
-All ranks are filled, If a taxa is unclassified at a given rank(*i.e.*
-the confidence value at that rank is less than that specified), “the
-letter for the higher rank”uncl\_” is prepended to the classification at
-the higher rank and copied to all lower ranks.
+All ranks are filled. If a taxa is unclassified at a given rank (*i.e.*
+the confidence value at that rank is less than that specified), “uncl\_”
+is prepended to the classification at the higher rank and copied to all
+lower ranks.
 
 For example, in the example below *Hyphomicrobiales* is classified to
 order and to uncl\_*Hyphomicrobiales* at the family and genus levels.
