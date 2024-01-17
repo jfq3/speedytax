@@ -23,3 +23,6 @@ taxonomy_file <- system.file("extdata", "qiime2_classification_table.tsv", packa
 example_tax_table <- import_qiime2_tax_table(in_file = taxonomy_file)
 example_tax_table
 }
+\references{
+Bolyen E, Rideout JR, Dillon MR, Bokulich NA, \emph{et al}. 2019. Reproducible, interactive, scalable and extensible microbiome data science using QIIME 2. Nat Biotechnol 37:852-857.
+}
