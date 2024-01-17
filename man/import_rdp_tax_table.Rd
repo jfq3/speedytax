@@ -15,13 +15,18 @@ import_rdp_tax_table(in_file, confidence)
 A phyloseq tax_table object
 }
 \description{
-Import RDP Classifier Taxonomy Table
+Imports fix rank taxonomy files created with the RDP Classifier
 }
 \details{
-A confidence value of 0.8 for full-length 16S rRNA gene sequences and a value of 0.5 is recommended for shorter amplicons.
+The RDP Classifier must be given the option -f fixrank (or --format fixrank) in order for this importer to work correctly.
+
+A confidence value of 0.8 for is recommended for full-length 16S rRNA gene sequences and a value of 0.5 is recommended for shorter amplicons.
 }
 \examples{
 taxonomy_file <- system.file("extdata", "rdp_classification_table.tsv", package = "speedytax")
 example_tax_table <- import_rdp_tax_table(in_file = taxonomy_file)
 example_tax_table
+}
+\references{
+Wang Q, Garrity GM, Tiedje JM, Cole JR. 2007. Naive Bayesian classifier for rapid assignment of rRNA sequences into the new bacterial taxonomy. Appl Environ Microbiol 73:5261-5267.
 }

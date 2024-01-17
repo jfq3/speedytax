@@ -1,10 +1,15 @@
 #' Import RDP Classifier Taxonomy Table
+#'
+#' Imports fix rank taxonomy files created with the RDP Classifier
+#'
 #' @aliases import_rdp_tax_table
 #' @param in_file A fix-rank tab-delimited text file output by the RDP Classifier
 #' @param confidence The confidence level for filtering the taxonomy
 #' @usage import_rdp_tax_table(in_file, confidence)
-#' @details A confidence value of 0.8 for full-length 16S rRNA gene sequences and a value of 0.5 is recommended for shorter amplicons.
+#' @details The RDP Classifier must be given the option -f fixrank (or --format fixrank) in order for this importer to work correctly.
+#' @details A confidence value of 0.8 for is recommended for full-length 16S rRNA gene sequences and a value of 0.5 is recommended for shorter amplicons.
 #' @return A phyloseq tax_table object
+#' @references Wang Q, Garrity GM, Tiedje JM, Cole JR. 2007. Naive Bayesian classifier for rapid assignment of rRNA sequences into the new bacterial taxonomy. Appl Environ Microbiol 73:5261-5267.
 #' @export
 #' @importFrom utils read.table
 #' @examples
