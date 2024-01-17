@@ -25,7 +25,7 @@ When importing RDP Classifier and sintax results, the confidence value can be sp
 
 All ranks are filled, If a taxa is unclassified at a given rank(*i.e.* the confidence value at that rank is less than that specified), "the letter for the higher rank "uncl_" is prepended to the classification at the higher rank and copied to all lower ranks.  
 
-For example, in the example below *Hyphomicrobiales* is classified to order and the corresponding family and genus ranks are unclass_*Hyphomicrobiales*.  
+For example, in the example below *Hyphomicrobiales* is classified to order and to uncl_*Hyphomicrobiales* at the family and genus levels.  
 
 ## Installation
 

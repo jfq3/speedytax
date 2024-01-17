@@ -22,8 +22,7 @@ letter for the higher rank”uncl\_” is prepended to the classification at
 the higher rank and copied to all lower ranks.
 
 For example, in the example below *Hyphomicrobiales* is classified to
-order and the corresponding family and genus ranks are
-unclass\_*Hyphomicrobiales*.
+order and to uncl\_*Hyphomicrobiales* at the family and genus levels.
 
 ## Installation
 

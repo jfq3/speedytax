@@ -18,7 +18,7 @@ A phyloseq tax_table object
 Import SINTAX Taxonomy Table
 }
 \details{
-This function works with both vsearch USEARCH sintax results.
+This function works with both vsearch and USEARCH sintax results.
 
 A confidence value of 0.5 is recommended for shorter amplicons and a value of 0.8 for full-length 16S rRNA gene sequences.
 }
