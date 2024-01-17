@@ -19,13 +19,13 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/jfq3/speedytax/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jfq3/speedytax/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of speedytax is to quickly import classification files generated with the QIIME2 classifier, the RDP Classifier and the vsearch sintax classifier as phyloseq tax_table objects.  
+The goal of speedytax is to quickly import classification files generated with the QIIME2 classifier, the RDP Classifier and the USEARCH or vsearch sintax classifier as phyloseq tax_table objects.  
 
 When importing RDP Classifier and sintax results, the confidence value can be specified on import. In the case of the QIIME2 classifier the confidence value must be given when calling the classifier.    
 
-For each rank, a letter preface indicates the rank: "p_" for phylum, "c_" for class, *etc*. All ranks are filled, If a taxa is unclassified at a given rank(*i.e.* the confidence value at that rank is less than that specified), the letter for the higher rank is prepended to the classification at the higher rank.  
+All ranks are filled, If a taxa is unclassified at a given rank(*i.e.* the confidence value at that rank is less than that specified), "the letter for the higher rank "uncl_" is prepended to the classification at the higher rank and copied to all lower ranks.  
 
-For example, if a taxa is classified as f_Oxalobacteraceae with a confidence of 0.7 but the confidence at the genus level is only 0.4, then its classification at the genus level will be g_f_Oxalobacteraceae. This is made clearer by examining the example below.    
+For example, in the example below *Hyphomicrobiales* is classified to order and the corresponding family and genus ranks are unclass_*Hyphomicrobiales*.  
 
 ## Installation
 
@@ -42,7 +42,7 @@ This is an example of importing a classification file created with the RDP Class
 
 ```{r example}
 library(speedytax)
-taxonomy_file <- read_tax_example("rdp_classification_table.tsv")
+taxonomy_file <- read_tax_example("rdp_classifiification_table.tsv")
 example_tax_table <- import_rdp_tax_table(in_file = taxonomy_file)
 example_tax_table
 ```
