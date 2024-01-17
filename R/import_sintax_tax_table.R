@@ -4,7 +4,7 @@
 #' @param confidence The confidence level for filtering the taxonomy (0.8 by default)
 #' @usage import_sintax_tax_table(in_file, confidence)
 #' @details This function works with both vsearch and USEARCH sintax results.
-#' @details A confidence value of 0.5 is recommended for shorter amplicons and a value of 0.8 for full-length 16S rRNA gene sequences.
+#' @details A confidence value of 0.8 for full-length 16S rRNA gene sequences and a value of 0.5 is recommended for shorter amplicons.
 #' @return A phyloseq tax_table object
 #' @references Rognes T, Flouri T, Nichols B, Quince C, Mahé F. (2016) VSEARCH: a versatile open source tool for metagenomics. PeerJ 4:e2584. doi: 10.7717/peerj.2584
 #' @references Edgar RC (2016) SINTAX: a simple non-Bayesian taxonomy classifier for 16S and ITS sequences. bioRxiv. doi:10.1101/074161

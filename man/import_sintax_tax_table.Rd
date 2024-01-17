@@ -20,7 +20,7 @@ Import SINTAX Taxonomy Table
 \details{
 This function works with both vsearch and USEARCH sintax results.
 
-A confidence value of 0.5 is recommended for shorter amplicons and a value of 0.8 for full-length 16S rRNA gene sequences.
+A confidence value of 0.8 for full-length 16S rRNA gene sequences and a value of 0.5 is recommended for shorter amplicons.
 }
 \examples{
 # With a vsearch sintax result
