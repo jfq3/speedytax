@@ -15,7 +15,7 @@ import_rdp_tax_table(in_file, confidence)
 A phyloseq tax_table object
 }
 \description{
-Imports fix rank taxonomy files created with the RDP Classifier
+Imports fixed rank taxonomy files created with the RDP Classifier
 }
 \details{
 The RDP Classifier must be given the option -f fixrank (or --format fixrank) in order for this importer to work correctly.

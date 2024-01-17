@@ -1,6 +1,6 @@
 #' Import RDP Classifier Taxonomy Table
 #'
-#' Imports fix rank taxonomy files created with the RDP Classifier
+#' Imports fixed rank taxonomy files created with the RDP Classifier
 #'
 #' @aliases import_rdp_tax_table
 #' @param in_file A fix-rank tab-delimited text file output by the RDP Classifier
