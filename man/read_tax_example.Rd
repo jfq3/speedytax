@@ -7,13 +7,13 @@
 read_tax_example(file = NULL)
 }
 \arguments{
-\item{file}{Name of file to return. If \code{NULL}, the files in inst/extdata will be listed.}
+\item{file}{Name of file to return.}
 }
 \value{
-Returns the full path to the requested file from the package sub-directory inst/extdata if it exists. If called without specifying a file, it returns a list of files in inst/extdata. This function has the added benefit of working during package development when the system.file method cannot be used.
+Returns the full path to the requested file from the package sub-directory inst/extdata if it exists, or a list of the files in the directory if no file is specified.
 }
 \description{
-'speedytax' comes bundled with example taxonomy files in its \code{inst/extdata} directory. This function makes them easy to access.
+Access the files in speedyseq's inst/extdata sub-directory
 }
 \examples{
 read_tax_example()
