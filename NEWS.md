@@ -1,3 +1,3 @@
-# speedytax 1.0.2
+# speedytax 1.0.3
 
 * Initial CRAN submission.
