@@ -3,6 +3,7 @@
 export(import_qiime2_tax_table)
 export(import_rdp_tax_table)
 export(import_sintax_tax_table)
+export(read_tax_example)
 export(simple_cap)
 import(Rcpp)
 importFrom(Rcpp,evalCpp)
