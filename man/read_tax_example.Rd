@@ -17,5 +17,5 @@ Access the files in speedyseq's inst/extdata sub-directory
 }
 \examples{
 read_tax_example()
-read_tax_example("rdp_able.tsv")
+read_tax_example("rdp_table.tsv")
 }
