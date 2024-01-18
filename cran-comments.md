@@ -11,7 +11,7 @@ I made the following changes:
    RDP Classifier to 'RDP Classifier'
    vsearch sintax to 'vsearch sintax'
    QIIME2 to 'QIIME2'
-   Added 'USEARCH'
+   Added 'USEARCH sintax'
    Added decfinitions of the acronyms QIIME and RDP.
    I have also added references to the programs within each function, providing more details for the user.
 
