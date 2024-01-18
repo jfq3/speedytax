@@ -12,7 +12,7 @@ I made the following changes:
    vsearch sintax to 'vsearch sintax'
    QIIME2 to 'QIIME2'
    Added 'USEARCH'
-   Added decfinitions of the acrobyms QIIME and RDP.
+   Added decfinitions of the acronyms QIIME and RDP.
    I have also added references to the programs within each function, providing more details for the user.
 
 Responding to: Please add \value to .Rd files regarding exported methods and explain the functions results in the documentation. 
