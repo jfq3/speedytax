@@ -41,7 +41,7 @@ RDP Classifier:
 
 ``` r
 library(speedytax)
-taxonomy_file <- read_tax_example("rdp_classifiification_table.tsv")
+taxonomy_file <- read_tax_example("rdp_table.tsv")
 example_tax_table <- import_rdp_tax_table(in_file = taxonomy_file)
 example_tax_table
 #> Taxonomy Table:     [10 taxa by 6 taxonomic ranks]:
