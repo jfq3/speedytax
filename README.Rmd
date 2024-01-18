@@ -35,6 +35,11 @@ You can install the development version of speedytax from [GitHub](https://githu
 # install.packages("devtools")
 devtools::install_github("jfq3/speedytax")
 ```
+You can install the latest release from CRAN with:
+
+``` r
+install.packages("speedytax")
+```
 
 ## Example
 

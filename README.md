@@ -34,6 +34,12 @@ You can install the development version of speedytax from
 devtools::install_github("jfq3/speedytax")
 ```
 
+You can install the latest release from CRAN with:
+
+``` r
+install.packages("speedytax")
+```
+
 ## Example
 
 This is an example of importing a classification file created with the
