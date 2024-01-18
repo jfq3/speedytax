@@ -23,7 +23,7 @@
 #' example_tax_table <- import_sintax_tax_table(in_file = taxonomy_file)
 #' example_tax_table
 #' # With a USEARCH sintax result
-#' taxonomy_file <- system.file("extdata", "usearch_sintax_classification_table.tsv", package = "speedytax")
+#' taxonomy_file <- system.file("extdata", "usearch_sintax_table.tsv", package = "speedytax")
 #' example_tax_table <- import_sintax_tax_table(in_file = taxonomy_file)
 #' example_tax_table
 import_sintax_tax_table <- function (in_file, confidence = 0.8) {
