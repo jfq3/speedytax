@@ -19,7 +19,7 @@ Import taxonomy results exported from the QIIME2 Bayesian classifiers
 This function expects up to 7 ranks (Domain, Phylum, Class, Order, Family, Genus and Species) but determines the number actually in the file.
 }
 \examples{
-taxonomy_file <- system.file("extdata", "qiime2_classification_table.tsv", package = "speedytax")
+taxonomy_file <- system.file("extdata", "qiime2_table.tsv", package = "speedytax")
 example_tax_table <- import_qiime2_tax_table(in_file = taxonomy_file)
 example_tax_table
 }

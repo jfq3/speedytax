@@ -23,7 +23,7 @@ The RDP Classifier must be given the option -f fixrank (or --format fixrank) in 
 A confidence value of 0.8 for is recommended for full-length 16S rRNA gene sequences and a value of 0.5 is recommended for shorter amplicons.
 }
 \examples{
-taxonomy_file <- system.file("extdata", "rdp_classification_table.tsv", package = "speedytax")
+taxonomy_file <- system.file("extdata", "rdp_table.tsv", package = "speedytax")
 example_tax_table <- import_rdp_tax_table(in_file = taxonomy_file)
 example_tax_table
 }

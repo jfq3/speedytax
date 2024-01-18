@@ -24,7 +24,7 @@ A confidence value of 0.8 is recommended for full-length 16S rRNA gene sequences
 }
 \examples{
 # With a vsearch sintax result
-taxonomy_file <- system.file("extdata", "vsearch_sintax_classification_table.tsv", package = "speedytax")
+taxonomy_file <- system.file("extdata", "vsearch_sintax_table.tsv", package = "speedytax")
 example_tax_table <- import_sintax_tax_table(in_file = taxonomy_file)
 example_tax_table
 # With a USEARCH sintax result

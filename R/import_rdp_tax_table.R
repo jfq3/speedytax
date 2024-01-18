@@ -13,7 +13,7 @@
 #' @export
 #' @importFrom utils read.table
 #' @examples
-#' taxonomy_file <- system.file("extdata", "rdp_classification_table.tsv", package = "speedytax")
+#' taxonomy_file <- system.file("extdata", "rdp_table.tsv", package = "speedytax")
 #' example_tax_table <- import_rdp_tax_table(in_file = taxonomy_file)
 #' example_tax_table
 

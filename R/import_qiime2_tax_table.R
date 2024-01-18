@@ -16,7 +16,7 @@
 #' @importFrom phyloseq tax_table
 #' @importFrom utils read.table
 #' @examples
-#' taxonomy_file <- system.file("extdata", "qiime2_classification_table.tsv", package = "speedytax")
+#' taxonomy_file <- system.file("extdata", "qiime2_table.tsv", package = "speedytax")
 #' example_tax_table <- import_qiime2_tax_table(in_file = taxonomy_file)
 #' example_tax_table
 
