@@ -12,7 +12,8 @@ I made the following changes:
    vsearch sintax to 'vsearch sintax'
    QIIME2 to 'QIIME2'
    Added 'USEARCH'
-   All of these are programs as indicated by wrapping them in single quotes (and well recognized); thus I don't see the need to explain them as acronyms. Explaining origins of the program names would be cumbersome to do, requiring a sentence each to fully explain each of them. I have added references to the programs within each function; I believe this is a better solution.
+   Added decfinitions of the acrobyms QIIME and RDP.
+   I have also added references to the programs within each function, providing more details for the user.
 
 Responding to: Please add \value to .Rd files regarding exported methods and explain the functions results in the documentation. 
 
@@ -25,8 +26,8 @@ I agree that \dontrun{} is not necessary and I have removed all instances of \do
 
 Responding to: Please add small files needed for the examples or vignette in the inst/extdata subfolder of your package and use system.file() to get the correct package path.
 
-The example files were and are in inst/extdata; I now use system.file to access them for the examples.
-I retained the function read_tax_example() (which I previoulsy used to access the files in the examples) because I could not build  the README.md file without it. This function is now properly documented.
+The example files were and are in inst/extdata; Per your request, I now use system.file to access them for the examples within each function Rd file. Using system.file made lines in the manual too long, so I had to shorten the file names.
+I retained the function read_tax_example() (which I previoulsy used to access the files in the examples) because I could not build  the README.md file without it. Retaining it will also allow users who follow the README to recreate the example in README. This function is now properly documented.
 
 ## Second Resubmission (version 1.0.2)
 
