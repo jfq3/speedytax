@@ -19,6 +19,9 @@
 #' taxonomy_file <- system.file("extdata", "qiime2_table.tsv", package = "speedytax")
 #' example_tax_table <- import_qiime2_tax_table(in_file = taxonomy_file)
 #' example_tax_table
+#'  taxonomy_file <- system.file("extdata", "qiime2_table_a.tsv", package = "speedytax")
+#' example_tax_table <- import_qiime2_tax_table(in_file = taxonomy_file)
+#' example_tax_table
 
 import_qiime2_tax_table <- function(in_file) {
   temp <- utils::read.table(file = in_file, header = TRUE,

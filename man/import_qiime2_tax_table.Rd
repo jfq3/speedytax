@@ -22,6 +22,9 @@ This function expects up to 7 ranks (Domain, Phylum, Class, Order, Family, Genus
 taxonomy_file <- system.file("extdata", "qiime2_table.tsv", package = "speedytax")
 example_tax_table <- import_qiime2_tax_table(in_file = taxonomy_file)
 example_tax_table
+ taxonomy_file <- system.file("extdata", "qiime2_table_a.tsv", package = "speedytax")
+example_tax_table <- import_qiime2_tax_table(in_file = taxonomy_file)
+example_tax_table
 }
 \references{
 Bolyen E, Rideout JR, Dillon MR, Bokulich NA, \emph{et al}. 2019. Reproducible, interactive, scalable and extensible microbiome data science using QIIME 2. Nat Biotechnol 37:852-857.
