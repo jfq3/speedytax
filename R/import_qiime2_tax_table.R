@@ -39,12 +39,13 @@ import_qiime2_tax_table <- function(in_file) {
   ranks <- c("d", "p", "c", "o", "f", "g", "s")
 
   suppressWarnings(sorted_data <-  temp |>
-    tibble::as_tibble() |>
-    dplyr::select(-Confidence) |>
-    dplyr::mutate(Taxon = str_replace_all(Taxon, "__", "_")) |>
-    tidyr::separate(col = Taxon, sep = "; ", into = ranks[1:n_ranks],
-                    fill = "right") |>
-    as.matrix())
+                     tibble::as_tibble() |>
+                     dplyr::select(-Confidence) |>
+                     dplyr::mutate(Taxon = str_replace_all(Taxon, "; ", ";"),
+                                   Taxon = str_replace_all(Taxon, "__", "_")) |>
+                     tidyr::separate(col = Taxon, sep = ";", into = ranks[1:n_ranks],
+                                     fill = "right") |>
+                     as.matrix())
 
   rownames(sorted_data) <- sorted_data[, 1]
   sorted_data <- sorted_data[, -1]
