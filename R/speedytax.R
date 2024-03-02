@@ -3,7 +3,7 @@
 #'
 #' Refactored functions for importing classifier results into phyloseq more quickly.
 #'
-#' @docType package
+#' @docType _PACKAGE
 #' @author John Quensen <quensenj@msu.edu>
 #' @import Rcpp
 #' @importFrom Rcpp evalCpp
