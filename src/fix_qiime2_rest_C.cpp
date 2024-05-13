@@ -10,7 +10,7 @@ StringMatrix fix_qiime2_rest_C(StringMatrix sorted_data) {
       std::string s = as<std::string>(sorted_data(i,j-1));
       std::string n = as<std::string>(sorted_data(i,j));
       if (n != "") {
-        sorted_data(1, j) = sorted_data(i, j);
+        sorted_data(i, j) = sorted_data(i, j);
       } else if (s.substr(0,4)=="uncl") {
         sorted_data(i, j) = sorted_data(i, j-1);
       } else {
