@@ -17,7 +17,8 @@ Import taxonomy results exported from the QIIME2 Bayesian classifiers
 }
 \details{
 This function expects up to 7 ranks (Domain, Phylum, Class, Order, Family, Genus and Species) but determines the number actually in the file.
-Depending on how the QIIME2 classifier is build, the ranks in the Taxon field of the classification result may be separated by a semicolon or by a semicolon plus a space. This function correctly parses the Taxon field in both cases.
+
+Depending on how the QIIME2 classifier is built, the ranks in the Taxon field of the classification result may be separated by a semicolon or by a semicolon plus a space. This function correctly parses the Taxon field in both cases.
 }
 \examples{
 ## Example with ranks in Taxon field separated by semicolon plus a space.

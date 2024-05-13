@@ -7,7 +7,7 @@
 #' @param in_file A tab-delimited classification table output by QIIME2
 #' @return A phyloseq tax_table object
 #' @details This function expects up to 7 ranks (Domain, Phylum, Class, Order, Family, Genus and Species) but determines the number actually in the file.
-#' Depending on how the QIIME2 classifier is build, the ranks in the Taxon field of the classification result may be separated by a semicolon or by a semicolon plus a space. This function correctly parses the Taxon field in both cases.
+#' @details Depending on how the QIIME2 classifier is built, the ranks in the Taxon field of the classification result may be separated by a semicolon or by a semicolon plus a space. This function correctly parses the Taxon field in both cases.
 #' @references Bolyen E, Rideout JR, Dillon MR, Bokulich NA, *et al*. 2019. Reproducible, interactive, scalable and extensible microbiome data science using QIIME 2. Nat Biotechnol 37:852-857.
 #' @export
 #' @importFrom dplyr select mutate pull
