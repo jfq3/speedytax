@@ -21,17 +21,3 @@ StringMatrix fix_qiime2_rest_C(StringMatrix sorted_data) {
   return sorted_data;
 }
 
-// # Fill in other cases of empty data
-// # for (i in 1:nrow(sorted_data)) {
-// #   for (j in 2:ncol(sorted_data)) {
-// #     if(!is.na(sorted_data[i, j])) {
-// #       sorted_data[1, j] <- sorted_data[i, j]
-// #     } else {
-// #       if (stringr::str_starts(sorted_data[i, j-1], "uncl")) {
-// #         sorted_data[i, j] <- sorted_data[i, j-1]
-// #       } else {
-// #         sorted_data[i, j] <- paste0("uncl_", sorted_data[i, j-1])
-// #       }
-// #     }
-// #   }
-// # }
