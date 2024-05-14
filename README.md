@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/jfq3/speedytax/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jfq3/speedytax/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/jfq3/speedytax/branch/main/graph/badge.svg)](https://app.codecov.io/gh/jfq3/speedytax?branch=main)
 <!-- badges: end -->
 
 The goal of speedytax is to quickly import classification files

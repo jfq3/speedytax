@@ -7,3 +7,4 @@ test_function.R
 ^cran-comments\.md$
 ^CRAN-SUBMISSION$
 ^LICENSE\.md$
+^codecov\.yml$
