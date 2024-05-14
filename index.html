@@ -63,6 +63,7 @@
 </h1></div>
 <!-- badges: start -->
 
+<!-- badges: end -->
 <p>The goal of speedytax is to quickly import classification files generated with the QIIME2 classifier, the RDP Classifier and the USEARCH or vsearch sintax classifier as phyloseq tax_table objects.</p>
 <p>When importing RDP Classifier and sintax results, the confidence value can be specified on import. In the case of the QIIME2 classifier the confidence value must be given when calling the classifier.</p>
 <p>All ranks are filled. If a taxa is unclassified at a given rank (<em>i.e.</em> the confidence value at that rank is less than that specified), “uncl_” is prepended to the classification at the higher rank and copied to all lower ranks.</p>
@@ -171,7 +172,6 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/jfq3/speedytax/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/jfq3/speedytax/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://app.codecov.io/gh/jfq3/speedytax?branch=main" class="external-link"><img src="https://codecov.io/gh/jfq3/speedytax/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 
